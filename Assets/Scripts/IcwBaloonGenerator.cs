@@ -19,7 +19,7 @@ namespace IcwBaloons
             newb = Instantiate(BaloonPrefab);
             newb.transform.SetParent(this.transform);
             float x = Random.Range(0.0f, (float)IcwGame.sizex);
-            newb.transform.localPosition = new Vector3(x, 0, 0);
+            newb.transform.localPosition = new Vector3(x, 1, 0);
             newBaloonNeed = false;
         }
 

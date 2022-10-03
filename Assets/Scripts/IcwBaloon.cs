@@ -48,6 +48,8 @@ namespace IcwBaloons
         private void OnMouseDown()
         {
             IcwBonusGenerator.Instance.gameObject.BroadcastMessage("BaloonWasBurst", balooncolor);
+            IcwScores.instance.AddScores(1);
+            IcwSplashText.instance.SplashText(this.transform.position, "+1", "");
             Burst();
         }
 

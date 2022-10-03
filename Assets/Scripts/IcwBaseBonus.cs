@@ -8,6 +8,10 @@ namespace IcwBaloons
         protected float ttl;
         protected IcwSatusBar ttlBar;
 
+        public void ResetTTL()
+        {
+            ttl = ttldefault;
+        }
         public virtual void Start()
         {
             ttl = ttldefault;

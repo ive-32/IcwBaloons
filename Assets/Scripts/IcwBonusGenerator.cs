@@ -8,7 +8,8 @@ namespace IcwBaloons
     {
         public static IcwBonusGenerator Instance;
         bool newBonusNeed;
-        float lastbonustasktime;
+        float awaitNewTaskTime;
+        public float newbonusdeltatime;
         public GameObject BonusPrefab;
         GameObject bonustask;
 
@@ -20,7 +21,8 @@ namespace IcwBaloons
         private void Start()
         {
             newBonusNeed = false;
-            lastbonustasktime = Time.realtimeSinceStartup;
+            awaitNewTaskTime = Time.realtimeSinceStartup;
+            newbonusdeltatime = Random.Range(20, 25);
             bonustask = null;
         }
 
@@ -28,19 +30,24 @@ namespace IcwBaloons
         {
             bonustask = Instantiate(BonusPrefab);
             bonustask.transform.SetParent(this.transform);
-            bonustask.transform.localPosition = new Vector3(1, IcwGame.sizey, 0);
             newBonusNeed = false;
-            lastbonustasktime = Time.realtimeSinceStartup;
+            newbonusdeltatime = 100000;
         }
 
         private bool CalcBonusTaskNeed()
         {
-            float deltatime = Time.realtimeSinceStartup - lastbonustasktime;
-            return bonustask==null && Random.Range(0.0f, 60.0f) < deltatime / 2;
+            float deltatime = Time.realtimeSinceStartup - awaitNewTaskTime;
+
+            return bonustask == null && newbonusdeltatime < deltatime;
         }
 
         private void Update()
         {
+            if (bonustask == null && newbonusdeltatime == 100000)
+            {
+                awaitNewTaskTime = Time.realtimeSinceStartup;
+                newbonusdeltatime = Random.Range(40, 120);
+            }
             newBonusNeed = CalcBonusTaskNeed();
             if (newBonusNeed) GenerateNewBonus();
         }

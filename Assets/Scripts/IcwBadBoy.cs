@@ -1,5 +1,4 @@
-﻿using UnityEditor.Tilemaps;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace IcwBaloons
 {
@@ -9,7 +8,7 @@ namespace IcwBaloons
         Animation anim;
         public override void Start()
         {
-            ttldefault = 45;
+            ttldefault = 20;
             base.Start();
             baloons = GameObject.Find("Baloons").gameObject;
             anim = this.GetComponent<Animation>();
