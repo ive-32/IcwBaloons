@@ -486,6 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaloonPrefab: {fileID: 7163698383773811525, guid: de705287f382313478dd5dc786b21148, type: 3}
+  BonusBaloonPrefab: {fileID: 6018429866050726575, guid: 53b6f2f0c6982f846a9e59f4cddedb5a, type: 3}
 --- !u!1 &800889649
 GameObject:
   m_ObjectHideFlags: 0

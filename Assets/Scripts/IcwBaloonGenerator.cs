@@ -7,6 +7,7 @@ namespace IcwBaloons
     {
         private bool newBaloonNeed;
         public GameObject BaloonPrefab;
+        public GameObject BonusBaloonPrefab;
 
         private void Start()
         {
@@ -15,11 +16,12 @@ namespace IcwBaloons
 
         void GenerateNewBaloon()
         {
+            
             GameObject newb;
-            newb = Instantiate(BaloonPrefab);
-            newb.transform.SetParent(this.transform);
+            GameObject newbprefab = BaloonPrefab;
+            if (Random.Range(0, 100) < 50) newbprefab = BonusBaloonPrefab;
             float x = Random.Range(0.0f, (float)IcwGame.sizex);
-            newb.transform.localPosition = new Vector3(x, 1, 0);
+            newb = Instantiate(newbprefab, new Vector3(x, 1, 0), Quaternion.identity, this.transform);
             newBaloonNeed = false;
         }
 

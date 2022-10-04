@@ -37,7 +37,7 @@ namespace IcwBaloons
                     if (anglevariable > 0) anim.Play("SlingShotUp");
                     if (anglevariable < 0) anim.Play("SlingShotDown");
                 }
-                targetbaloon.GetComponent<IcwBaloon>().Burst();
+                targetbaloon.GetComponent<IcwBaseBaloon>().Burst();
             }
         }
     }
