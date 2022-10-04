@@ -14,6 +14,9 @@ namespace IcwBaloons
             SetBurstColor(balooncolor);
             speed = Random.Range(1.5f, 2f);
             base.Awake();
+
+            IcwBaseBaloon bb = this.GetComponent<IcwBaseBaloon>();
+            Debug.LogWarning(bb.name);
         }
 
         
@@ -23,7 +26,10 @@ namespace IcwBaloons
         {
             base.OnMouseDown();
             IcwScores.instance.AddScores(50);
-            IcwSplashText.instance.SplashText(this.transform.position, "+50", "U've Got It!");
+            IcwBonuses bonus = new IcwBonuses();
+            IcwSplashText.instance.SplashText(this.transform.position, bonus.GetBonusDescribe(), bonus.GetBonusText());
+            bonus.BonusAction();
+
         }
     }
 }

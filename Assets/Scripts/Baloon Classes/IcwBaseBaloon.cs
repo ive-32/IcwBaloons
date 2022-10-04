@@ -6,9 +6,11 @@ namespace IcwBaloons
     public class IcwBaseBaloon : MonoBehaviour
     {
         protected Rigidbody2D rg2d;
-        protected float speed;
+        protected float speed = 1.0f;
         protected Color balooncolor;
 
+
+        
         protected virtual void SetBurstColor(Color acolor)
         {
             GameObject gameObjectParticleSystem = this.transform.Find("Particle System").gameObject;
@@ -22,10 +24,16 @@ namespace IcwBaloons
             }
         }
 
+        public virtual void SetSpeed(float aspeed)
+        {
+            speed = aspeed;
+            rg2d.velocity = Vector2.up * speed * IcwGame.gameBaseSpeed;
+        }
+
         protected virtual void Awake()
         {
             rg2d = this.GetComponent<Rigidbody2D>();
-            rg2d.velocity = Vector2.up * speed;
+            SetSpeed(speed);
         }
 
         protected virtual void Start()
@@ -42,7 +50,12 @@ namespace IcwBaloons
                 else currvel.x = 0;
                 rg2d.velocity = currvel;
             }
-            if (this.transform.position.y > IcwGame.sizey) Object.Destroy(this.gameObject);
+            if (this.transform.position.y > IcwGame.sizey)
+            {
+                Object.Destroy(this.gameObject);
+                IcwGame.instance.lostballs++;
+                IcwLostBalls.instance.ShowLostBalls();
+            }
         }
 
         protected virtual void OnMouseDown()

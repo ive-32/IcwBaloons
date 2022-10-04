@@ -3,7 +3,7 @@
 
 namespace IcwBaloons
 { 
-    public class IcwBonusTask : IcwBaseBonus
+    public class IcwBonusTask : IcwBaseHelper
     {
         const int bonuslength = 3;
         Color[] colors = new Color[bonuslength];
@@ -70,7 +70,7 @@ namespace IcwBaloons
             if (totalcompelted == bonuslength)
             { // Bonus task complete
                 GameObject gm = GameObject.Find(bonusprefab.name + "(Clone)");
-                if (gm != null) gm.GetComponent<IcwBaseBonus>().ResetTTL();
+                if (gm != null) gm.GetComponent<IcwBaseHelper>().ResetTTL();
                 else Instantiate(bonusprefab);
                 IcwSplashText.instance.SplashText(new Vector3(IcwGame.sizex / 2.0f, 1.0f, 0), "+100", "U've Got It!", true);
                 IcwScores.instance.AddScores(100);

@@ -57,21 +57,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\IcwCamera.cs" />
-    <Compile Include="Assets\Scripts\IcwBonusGenerator.cs" />
+    <Compile Include="Assets\Scripts\Helpers Classes\IcwTaskGenerator.cs" />
+    <Compile Include="Assets\Scripts\Baloon Classes\IcwBaseBaloon.cs" />
     <Compile Include="Assets\Scripts\IcwGestures.cs" />
-    <Compile Include="Assets\Scripts\IcwBonusTask.cs" />
-    <Compile Include="Assets\Scripts\IcwBaloonGenerator.cs" />
-    <Compile Include="Assets\Scripts\IcwColors.cs" />
-    <Compile Include="Assets\Scripts\IcwGame.cs" />
-    <Compile Include="Assets\Scripts\IcwBadBoy.cs" />
-    <Compile Include="Assets\Scripts\IcwSatusBar.cs" />
-    <Compile Include="Assets\Scripts\IcwLantern.cs" />
-    <Compile Include="Assets\Scripts\IcwBaseBonus.cs" />
+    <Compile Include="Assets\Scripts\Baloon Classes\IcwBonuses.cs" />
     <Compile Include="Assets\Scripts\IcwScores.cs" />
     <Compile Include="Assets\Scripts\IcwSplashText.cs" />
+    <Compile Include="Assets\Scripts\Helpers Classes\IcwBonusTask.cs" />
+    <Compile Include="Assets\Scripts\Baloon Classes\IcwBaloonGenerator.cs" />
+    <Compile Include="Assets\Scripts\IcwColors.cs" />
+    <Compile Include="Assets\Scripts\IcwGame.cs" />
+    <Compile Include="Assets\Scripts\Helpers Classes\IcwBadBoy.cs" />
+    <Compile Include="Assets\Scripts\IcwSatusBar.cs" />
+    <Compile Include="Assets\Scripts\Helpers Classes\IcwLantern.cs" />
+    <Compile Include="Assets\Scripts\Helpers Classes\IcwBaseHelper.cs" />
     <Compile Include="Assets\Scripts\Baloon Classes\IcwBonusBaloon.cs" />
-    <Compile Include="Assets\Scripts\Baloon Classes\IcwBaseBaloon.cs" />
     <Compile Include="Assets\Scripts\Baloon Classes\IcwBaloon.cs" />
+    <Compile Include="Assets\Scripts\Trolls\IcwTrollFace.cs" />
+    <Compile Include="Assets\Scripts\IcwLostBalls.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

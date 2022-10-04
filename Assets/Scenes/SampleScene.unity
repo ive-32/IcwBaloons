@@ -845,7 +845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1f8d7ae1380704099cc8f8d1725419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BadBoy: {fileID: 1971974616167767647, guid: 1e1bb815a40569b42bc1ac15bc16f55d, type: 3}
+  Lanternprefab: {fileID: 7196489924943053930, guid: 884f14eeb94815f4c9d24add760c7094, type: 3}
+  Trollprefab: {fileID: 8700408256429485478, guid: 74ff4cd5837affe409649249ecbce85e, type: 3}
 --- !u!1 &2077727219
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +858,7 @@ GameObject:
   - component: {fileID: 2077727220}
   - component: {fileID: 2077727221}
   m_Layer: 0
-  m_Name: Bonuses
+  m_Name: Tasks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

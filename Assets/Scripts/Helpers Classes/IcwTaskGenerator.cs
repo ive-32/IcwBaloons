@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace IcwBaloons
 {
-    public class IcwBonusGenerator : MonoBehaviour
+    public class IcwTaskGenerator : MonoBehaviour
     {
-        public static IcwBonusGenerator Instance;
+        public static IcwTaskGenerator Instance;
         bool newBonusNeed;
         float awaitNewTaskTime;
         public float newbonusdeltatime;
@@ -28,8 +27,7 @@ namespace IcwBaloons
 
         void GenerateNewBonus()
         {
-            bonustask = Instantiate(BonusPrefab);
-            bonustask.transform.SetParent(this.transform);
+            bonustask = Instantiate(BonusPrefab, this.transform);
             newBonusNeed = false;
             newbonusdeltatime = 100000;
         }

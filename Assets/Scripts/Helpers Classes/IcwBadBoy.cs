@@ -2,7 +2,7 @@
 
 namespace IcwBaloons
 {
-    public class IcwBadBoy : IcwBaseBonus
+    public class IcwBadBoy : IcwBaseHelper
     {
         GameObject baloons;
         Animation anim;

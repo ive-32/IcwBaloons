@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace IcwBaloons
 {
-    public class IcwLantern : IcwBaseBonus
+    public class IcwLantern : IcwBaseHelper
     {
 
         public override void Start()
@@ -16,7 +16,7 @@ namespace IcwBaloons
         
         void OnTriggerEnter2D(Collider2D other)
         {
-            IcwBaloon bl = other.gameObject.GetComponent<IcwBaloon>();
+            IcwBaseBaloon bl = other.attachedRigidbody.gameObject.GetComponent<IcwBaseBaloon>();
             if (bl != null) bl.Burst();
         }
     }

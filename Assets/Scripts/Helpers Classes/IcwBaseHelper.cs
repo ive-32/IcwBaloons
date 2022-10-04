@@ -2,7 +2,7 @@
 
 namespace IcwBaloons
 {
-    public class IcwBaseBonus : MonoBehaviour
+    public class IcwBaseHelper : MonoBehaviour
     {
         protected float ttldefault = 30;
         protected float ttl;

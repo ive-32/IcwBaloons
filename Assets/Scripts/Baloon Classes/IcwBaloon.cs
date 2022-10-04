@@ -5,14 +5,21 @@ namespace IcwBaloons
 {
     public class IcwBaloon : IcwBaseBaloon
     {
-        
-        protected override void Awake()
+
+        public void SetColor(Color acolor)
         {
-            balooncolor = IcwColors.GetRandomColor();
+            balooncolor = acolor;
+            SetBurstColor(acolor);
             GameObject BaloonSprite;
             BaloonSprite = this.transform.Find("Baloon").gameObject;
             BaloonSprite.GetComponent<SpriteRenderer>().color = balooncolor;
-            SetBurstColor(balooncolor);
+        }
+
+
+        protected override void Awake()
+        {
+            balooncolor = IcwColors.GetRandomColor();
+            SetColor(balooncolor);
             speed = Random.Range(0.8f, 1.5f);
             base.Awake();
         }
@@ -22,7 +29,7 @@ namespace IcwBaloons
 
         protected override void OnMouseDown()
         {
-            IcwBonusGenerator.Instance.gameObject.BroadcastMessage("BaloonWasBurst", balooncolor);
+            IcwTaskGenerator.Instance.gameObject.BroadcastMessage("BaloonWasBurst", balooncolor);
             IcwScores.instance.AddScores(1);
             IcwSplashText.instance.SplashText(this.transform.position, "+1", "");
             base.OnMouseDown();
